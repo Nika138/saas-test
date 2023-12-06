@@ -1,0 +1,262 @@
+<header class="bg-transparent">
+  <!--Navbar-->
+  <nav class="relative container mx-auto p-6">
+    <!--Flex Container-->
+    <div class="flex items-center justify-between">
+      <!--Logo-->
+      <div class="text-white">LOGO</div>
+      <!--Menu Items-->
+      <div class="hidden lg:flex space-x-12 text-gray-100 font-bold">
+        <a href="#" class="hover:text-white" routerLink="">Main</a>
+        <!-- Info Button -->
+        <button
+          id="infoDropdownHoverButton"
+          data-dropdown-toggle="infoDropdownHover"
+          data-dropdown-trigger="hover"
+          class="text-gray-100 font-bold text-center inline-flex items-center hover:hover:text-white"
+          type="button"
+        >
+          Info
+          <svg
+            class="w-2.5 h-2.5 ms-3"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 10 6"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 1 4 4 4-4"
+            />
+          </svg>
+        </button>
+
+        <!-- Info Dropdown menu -->
+        <div
+          id="infoDropdownHover"
+          class="z-10 hidden divide-y divide-gray-100 rounded-lg shadow w-44 pt-2"
+        >
+          <ul
+            class="py-2 text-sm text-gray-100"
+            aria-labelledby="infoDropdownHoverButton"
+          >
+            <!-- Info menu items -->
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 dark:hover:text-white"
+                routerLink="/about"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 dark:hover:text-white"
+                >Guides</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 dark:hover:text-white"
+                >Strategies <span class="text-[10px]"> - COMING SOON</span></a
+              >
+            </li>
+            <li>
+              <a
+                class="block px-4 py-2 dark:hover:text-white"
+                routerLink="/contact-us"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Services Button -->
+        <button
+          id="servicesDropdownHoverButton"
+          data-dropdown-toggle="servicesDropdownHover"
+          data-dropdown-trigger="hover"
+          class="text-gray-100 font-bold text-center inline-flex items-center hover:text-white"
+          type="button"
+        >
+          Services
+          <svg
+            class="w-2.5 h-2.5 ms-3"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 10 6"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 1 4 4 4-4"
+            />
+          </svg>
+        </button>
+
+        <!-- Services Dropdown menu -->
+        <div
+          id="servicesDropdownHover"
+          class="z-10 hidden divide-y divide-gray-100 rounded-lg shadow w-44 pt-2"
+        >
+          <ul
+            class="py-2 text-sm text-gray-100"
+            aria-labelledby="servicesDropdownHoverButton"
+          >
+            <li>
+              <a href="#" class="block px-4 py-2 dark:hover:text-white"
+                >Charts Suit</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 dark:hover:text-white"
+                >Screeners</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 dark:hover:text-white"
+                >Education<span class="text-[10px]"> - COMING SOON</span></a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 dark:hover:text-white"
+                >1 on 1 Guide<span class="text-[10px]"> - COMING SOON</span></a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 dark:hover:text-white"
+                >Join Group Guide<span class="text-[10px]">
+                  - COMING SOON</span
+                ></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <a href="#" class="hover:text-white" routerLink="/pricing">Pricing</a>
+        <a href="#" class="hover:text-white" routerLink="/disclaimer"
+          >Disclaimer</a
+        >
+        <a href="#" class="hover:text-white" routerLink="">News</a>
+        <a href="#" class="hover:text-white" routerLink="">Blog</a>
+      </div>
+      <a
+        class="hidden lg:block p-3 px-6 pt-2 text-gray-100 bg-transparent rounded-full baseline border border-gray-100 hover:text-white font-bold hover:cursor-pointer"
+        (click)="redirectToSection('plansection')"
+        >Get Started</a
+      >
+      <!--Burger Icon-->
+      <button
+        (click)="toggleMenu()"
+        [ngClass]="{ open: isClicked }"
+        id="menu-btn"
+        class="flex items-center hamburger lg:hidden focus:outline-none"
+      >
+        <span class="hamburger-top"></span>
+        <span class="hamburger-middle"></span>
+        <span class="hamburger-bottom"></span>
+      </button>
+    </div>
+
+    <!--Mobile Menu-->
+    <div class="lg:hidden">
+      <div
+        id="menu"
+        class="absolute top-0 left-0 right-0 flex flex-col items-center scale-y-1 py-8 mt-16 space-y-6 font-bold text-gray-100"
+        [ngClass]="{ 'scale-y-0': !isClicked }"
+      >
+        <a href="#" class="hover:text-white" routerLink="">Main</a>
+        <a
+          (click)="showSubMenu('info')"
+          class="hover:text-white cursor-pointer flex items-center justify-center"
+          >Info
+          <svg
+            class="w-2.5 h-2.5 ms-3"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 10 6"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 1 4 4 4-4"
+            /></svg
+        ></a>
+        <a
+          (click)="showSubMenu('services')"
+          class="hover:text-white cursor-pointer flex items-center justify-center"
+          >Services
+          <svg
+            class="w-2.5 h-2.5 ms-3"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 10 6"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 1 4 4 4-4"
+            /></svg
+        ></a>
+        <a href="#" class="hover:text-white" routerLink="/pricing">Pricing</a>
+        <a href="#" class="hover:text-white" routerLink="/disclaimer"
+          >Disclaimer</a
+        >
+        <a href="#" class="hover:text-white" routerLink="">News</a>
+        <a href="#" class="hover:text-white" routerLink="">Blog</a>
+        <!-- Get Started button (visible on small screens) -->
+        <a
+          class="md:hidden block p-3 px-6 pt-2 text-gray-100 bg-transparent rounded-full baseline border border-gray-100 hover:text-white font-bold hover:cursor-pointer"
+          (click)="redirectToSection('plansection')"
+          >Get Started</a
+        >
+      </div>
+    </div>
+    <div
+      *ngIf="showSubMenuFlag"
+      class="absolute top-0 left-0 right-0 flex flex-col items-center scale-y-1 py-8 mt-10 space-y-6 font-bold text-gray-100 rounded-xl"
+      id="submenu"
+    >
+      <span (click)="hideSubMenu()" class="cursor-pointer text-white">
+        <svg
+          class="w-4 h-4 mr-2 inline-block align-middle"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M10 0a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 13a1 1 0 0 1-1 1H6a1 1 0 1 1 0-2h4a1 1 0 0 1 1 1zm-1-8a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V6a1 1 0 0 1 1-1z"
+          />
+        </svg>
+        Go Back
+      </span>
+      <!-- Render Info or Services links based on selection -->
+      <ng-container *ngIf="subMenuType === 'info'; else servicesMenu">
+        <a href="#" class="hover:text-white">About Us</a>
+        <a href="#" class="hover:text-white">Guides</a>
+        <a href="#" class="hover:text-white">Strategies - COMING SOON</a>
+        <a href="#" class="hover:text-white" routerLink="/contact-us"
+          >Contact Us</a
+        >
+      </ng-container>
+      <ng-template #servicesMenu>
+        <a href="#" class="hover:text-white">Charts Suit</a>
+        <a href="#" class="hover:text-white">Screeners</a>
+        <a href="#" class="hover:text-white">Education - COMING SOON</a>
+        <a href="#" class="hover:text-white">1 on 1 Guide - COMING SOON</a>
+        <a href="#" class="hover:text-white">Join Group Guide - COMING SOON</a>
+      </ng-template>
+    </div>
+  </nav>
+</header>

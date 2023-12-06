@@ -1,0 +1,222 @@
+<section class="">
+  <section
+    class="flex flex-col items-center justify-center h-[250px] bg-transparent"
+    id="plansection"
+  >
+    <div
+      class="flex flex-col-reverse xs:flex-row sm:flex-row md:flex-row items-center justify-center p-6 space-y-4 md:space-y-0 text-center"
+    >
+      <h1 class="text-6xl sm:text-7xl font-bold mb-8 text-gray-300">
+        Our Plans
+      </h1>
+    </div>
+  </section>
+  <section
+    class="bg-gradient-to-b from-[#282828] via-gray-400 to-[#282828] py-16"
+  >
+    <div class="flex flex-col items-center w-full max-w-6xl mx-auto px-4">
+      <div class="flex items-center justify-center mb-8">
+        <label class="switch mr-4">
+          <input
+            type="checkbox"
+            [(ngModel)]="isMonthly"
+            (change)="updatePrices()"
+            id="toggleSwitch"
+          />
+          <span class="slider"></span>
+        </label>
+        <span class="text-white font-bold text-lg">{{
+          isMonthly ? "Monthly" : "Yearly"
+        }}</span>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div
+          class="flex flex-col bg-white p-8 rounded-2xl shadow-lg shadow-black border border-gray-500"
+        >
+          <div class="flex-grow">
+            <div
+              class="flex flex-col items-center justify-center text-center space-y-6"
+            >
+              <div>
+                <h1 class="text-3xl font-bold mb-6">Basic+</h1>
+                <h1 class="text-3xl font-bold">
+                  {{ prices[0].displayPrice }}
+                  <span class="text-lg">{{ isMonthly ? "/Mo" : "/Year" }}</span>
+                </h1>
+                <p class="text-green-500 font-bold" *ngIf="savings[0] !== ''">
+                  You Save: {{ savings[0] }}$ a year
+                </p>
+              </div>
+
+              <div
+                class="flex flex-col items-center justify-center text-center space-y-4"
+              >
+                <div class="items-center justify-center text-center mb-6">
+                  <button
+                    class="bg-[#282828] text-white py-2 px-4 rounded-full"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+                <div class="mt-6">
+                  <ul class="mx-6 space-y-2 divide-y">
+                    <li class="flex items-center space-x-">
+                      <h3 class="w-6">✔</h3>
+                      <h3 class="font-bold flex-grow">All Onchart.ai suits</h3>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                      <h3 class="w-6">✔</h3>
+                      <h3 class="font-bold">limited to 15m,30m,1h chart</h3>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                      <h3 class="w-6">✔</h3>
+                      <h3 class="font-bold">
+                        ExodusEye Screener for 7 tickers of your choice
+                      </h3>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                      <h3 class="w-6">✔</h3>
+                      <h3 class="font-bold">
+                        Access to discord community - Basic+ servers
+                      </h3>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="flex flex-col bg-[#282828] p-8 rounded-2xl shadow-lg shadow-white border border-gray-500"
+        >
+          <div class="flex-grow">
+            <div
+              class="flex flex-col items-center justify-center text-center space-y-6"
+            >
+              <div>
+                <h1 class="text-3xl font-bold mb-6 text-white">Premium</h1>
+                <h1 class="text-3xl font-bold text-white">
+                  {{ prices[1].displayPrice }}
+                  <span class="text-lg">{{ isMonthly ? "/Mo" : "/Year" }}</span>
+                </h1>
+                <p class="text-green-500 font-bold" *ngIf="savings[1] !== ''">
+                  You Save: {{ savings[1] }}$ a year
+                </p>
+              </div>
+
+              <div
+                class="flex flex-col items-center justify-center text-center space-y-4"
+              >
+                <div class="items-center justify-center text-center mb-6">
+                  <button
+                    class="bg-white text-black py-2 px-4 rounded-full font-bold"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+                <div class="mt-6">
+                  <ul class="mx-6 space-y-2 divide-y">
+                    <li class="flex items-center space-x-">
+                      <h3 class="w-6">✔</h3>
+                      <h3 class="font-bold flex-grow text-white">
+                        NeonZenith - Any chart
+                      </h3>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                      <h3 class="w-6">✔</h3>
+                      <h3 class="font-bold text-white">
+                        MagnetZone Horizon - Any chart
+                      </h3>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                      <h3 class="w-6">✔</h3>
+                      <h3 class="font-bold text-white">
+                        CandleSniper - limited to 5m,15m,30m,1h,1D chart
+                      </h3>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                      <h3 class="w-6">✔</h3>
+                      <h3 class="font-bold text-white">
+                        ApexAlphaClouds- limited to 5m,15m,30m,1h,1D chart
+                      </h3>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                      <h3 class="w-6">✔</h3>
+                      <h3 class="font-bold text-white">
+                        ExodusEye Screener for 20 tickers of your choice
+                      </h3>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                      <h3 class="w-6">✔</h3>
+                      <h3 class="font-bold text-white">
+                        Access to discord community - Premium servers
+                      </h3>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div
+          class="flex flex-col bg-white p-8 rounded-2xl shadow-lg shadow-black border border-gray-500"
+        >
+          <div class="flex-grow">
+            <div
+              class="flex flex-col items-center justify-center text-center space-y-6"
+            >
+              <div>
+                <h1 class="text-3xl font-bold mb-6">Elite</h1>
+                <h1 class="text-3xl font-bold">
+                  {{ prices[2].displayPrice }}
+                  <span class="text-lg">{{ isMonthly ? "/Mo" : "/Year" }}</span>
+                </h1>
+                <p class="text-green-500 font-bold" *ngIf="savings[2] !== ''">
+                  You Save: {{ savings[2] }}$ a year
+                </p>
+              </div>
+
+              <div
+                class="flex flex-col items-center justify-center text-center space-y-4"
+              >
+                <div class="items-center justify-center text-center mb-6">
+                  <button
+                    class="bg-[#282828] text-white py-2 px-4 rounded-full"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+                <div class="mt-6">
+                  <ul class="mx-6 space-y-2 divide-y">
+                    <li class="flex items-center space-x-">
+                      <h3 class="w-6">✔</h3>
+                      <h3 class="font-bold flex-grow">
+                        Access All Onchart.ai suits On any chart
+                      </h3>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                      <h3 class="w-6">✔</h3>
+                      <h3 class="font-bold">
+                        ExodusEye Screener for 40 tickers of your choice
+                      </h3>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                      <h3 class="w-6">✔</h3>
+                      <h3 class="font-bold">
+                        Access to discord community - Elite servers
+                      </h3>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

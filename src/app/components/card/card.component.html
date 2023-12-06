@@ -1,0 +1,16 @@
+<div
+  class="bg-[#181717] text-white rounded-2xl p-4 mb-4 cursor-pointer"
+  (click)="toggle()"
+>
+  <div class="flex-col items-center justify-between relative">
+    <div>
+      <p class="text-lg">{{ title }}</p>
+    </div>
+    <div
+      class="grid grid-rows-[0fr] overflow-hidden max-h-0 transition-all duration-700"
+      [ngClass]="{ 'h-auto max-h-96': isClicked }"
+    >
+      <p class="py-4">{{ text }}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,82 @@
+<footer
+  class="bg-cover bg-bottom"
+  style="background-image: url('../../assets/images/19836723_6178721.jpg')"
+>
+  <!--Flex Container-->
+  <div
+    class="container flex flex-col-reverse justify-between px-6 py-10 mx-auto space-y-8 md:flex-row md:space-y-0"
+  >
+    <!--Logo and Links-->
+    <div
+      class="flex flex-col-reverse items-center justify-between space-y-12 md:flex-col md:space-y-0 md:items-start"
+    >
+      <!--Logo-->
+      <div class="text-white">LOGO</div>
+      <!--Links-->
+      <div class="flex justify-center text-gray-100 space-x-4 font-bold">
+        <a href="#" class="hover:text-white"
+          ><img
+            src="../../assets/images/icon-facebook.svg"
+            class="w-[20px] h-[20px]"
+            alt=""
+        /></a>
+        <a href="#" class="hover:text-white"
+          ><img
+            src="../../assets/images/icon-instagram.svg"
+            alt=""
+            class="w-[20px] h-[20px]"
+        /></a>
+        <a href="#" class="hover:text-white"
+          ><img
+            src="../../assets/images/icon-twitter.svg"
+            alt=""
+            class="w-[20px] h-[20px]"
+        /></a>
+        <a href="#" class="hover:text-white"
+          ><img
+            src="../../assets/images/tiktok-outline-svgrepo-com.svg"
+            alt=""
+            class="w-[20px] h-[20px]"
+        /></a>
+        <a href="#" class="hover:text-white"
+          ><img
+            src="../../assets/images/youtube-svgrepo-com.svg"
+            alt=""
+            class="w-[20px] h-[20px]"
+        /></a>
+        <a href="#" class="hover:text-white"
+          ><img
+            src="../../assets/images/tradingview-svgrepo-com.svg"
+            alt=""
+            class="w-[20px] h-[20px]"
+        /></a>
+      </div>
+    </div>
+    <!-- list container-->
+    <div class="flex justify-around space-x-32">
+      <div class="flex flex-col space-y-3 text-gray-100 font-bold">
+        <a href="#" class="hover:text-white" routerLink="">Home</a>
+        <a href="#" class="hover:text-white" routerLink="/pricing">Pricing</a>
+        <a href="#" class="hover:text-white">Products</a>
+        <a href="#" class="hover:text-white" routerLink="/about">About Us</a>
+      </div>
+      <div class="flex flex-col space-y-3 text-gray-100 font-bold">
+        <a href="#" class="hover:text-white" routerLink="/contact-us"
+          >Contact Us</a
+        >
+        <a href="#" class="hover:text-white" routerLink="/disclaimer"
+          >Disclaimer</a
+        >
+        <a href="#" class="hover:text-white">Blog</a>
+      </div>
+    </div>
+    <!--button-->
+    <div class="flex items-center justify-between">
+      <a
+        class="hidden md:block p-3 px-6 pt-2 text-gray-100 bg-transparent rounded-full baseline border border-gray-100 hover:text-white font-bold hover:cursor-pointer"
+        (click)="scrollToSection('plansection')"
+        >Get Started</a
+      >
+    </div>
+  </div>
+</footer>
