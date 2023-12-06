@@ -62,3 +62,20 @@
   background-position: center;
   border-width: 1px;
 }
+
+#submenu {
+  background-image: url("../../assets/images/19836723_6178721.jpg");
+  border-color: rgb(184, 184, 184);
+  background-size: cover;
+  background-position: center;
+  border-width: 1px;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.fade-in.hidden {
+  opacity: 0;
+}
