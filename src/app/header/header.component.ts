@@ -11,6 +11,10 @@ export class HeaderComponent {
   subMenuType!: 'info' | 'services';
 
   toggleMenu() {
+    if (this.showSubMenuFlag) {
+      this.hideSubMenu();
+    }
+
     this.isClicked = !this.isClicked;
   }
 
